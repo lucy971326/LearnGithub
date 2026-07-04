@@ -1,0 +1,56 @@
+name: 🐛 Bug 报告
+description: 提交一个 bug 帮助我们改进
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢你花时间提交这个 bug！请尽可能详细地描述。
+  - type: input
+    id: description
+    attributes:
+      label: 🤔 Bug 描述
+      description: 发生了什么问题？期望的行为是什么？
+      placeholder: 点击按钮后页面崩溃...
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: 📝 复现步骤
+      description: 如何复现这个问题？
+      placeholder: |
+        1. 打开页面
+        2. 点击 xxx
+        3. 看到错误
+      render: bash
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: 💻 运行环境
+      description: 你使用的是哪个操作系统？
+      multiple: true
+      options:
+        - Windows
+        - macOS
+        - Linux
+        - iOS
+        - Android
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: 📋 日志 / 截图
+      description: 如果有错误日志或截图，请粘贴在这里
+      render: shell
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: ✅ 确认
+      options:
+        - label: 我已搜索过已有 Issues，没有找到相同的问题
+          required: true
